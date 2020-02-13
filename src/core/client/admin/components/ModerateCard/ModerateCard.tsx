@@ -12,7 +12,6 @@ import React, {
 import { HOTKEYS } from "coral-admin/constants";
 import { PropTypesOf } from "coral-framework/types";
 import {
-  BaseButton,
   Button,
   Card,
   Flex,
@@ -22,14 +21,12 @@ import {
   Timestamp,
 } from "coral-ui/components/v2";
 
+import { CommentContent, InReplyTo, UsernameButton } from "../Comment";
 import ApproveButton from "./ApproveButton";
 import CommentAuthorContainer from "./CommentAuthorContainer";
-import CommentContent from "./CommentContent";
 import FeatureButton from "./FeatureButton";
-import InReplyTo from "./InReplyTo";
 import MarkersContainer from "./MarkersContainer";
 import RejectButton from "./RejectButton";
-import Username from "./Username";
 
 import styles from "./ModerateCard.css";
 
@@ -195,12 +192,10 @@ const ModerateCard: FunctionComponent<Props> = ({
             <Flex alignItems="center">
               {!hideUsername && username && (
                 <>
-                  <BaseButton
+                  <UsernameButton
+                    username={username}
                     onClick={commentAuthorClick}
-                    className={styles.usernameButton}
-                  >
-                    <Username>{username}</Username>
-                  </BaseButton>
+                  />
                   <CommentAuthorContainer comment={comment} />
                 </>
               )}
