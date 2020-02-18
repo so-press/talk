@@ -19,14 +19,10 @@ exports[`renders approved correctly 1`] = `
           alignItems="center"
         >
           <React.Fragment>
-            <ForwardRef(forwardRef)
-              className="ModerateCard-usernameButton"
+            <UsernameButton
               onClick={[Function]}
-            >
-              <Username>
-                Theon
-              </Username>
-            </ForwardRef(forwardRef)>
+              username="Theon"
+            />
             <Relay(CommentAuthorContainer)
               comment={Object {}}
             />
@@ -64,17 +60,22 @@ exports[`renders approved correctly 1`] = `
         <div
           className="ModerateCard-viewContext"
         >
-          <Localized
-            id="moderate-comment-viewContext"
+          <ForwardRef(forwardRef)
+            iconLeft={true}
+            onClick={[Function]}
+            variant="text"
           >
-            <withPropsOnChange(TextLinkProps)
-              className="ModerateCard-link"
-              href="http://localhost/comment"
-              target="_blank"
+            <ForwardRef(forwardRef)>
+              question_answer
+            </ForwardRef(forwardRef)>
+            <Localized
+              id="moderate-comment-viewConversation"
             >
-              View Context
-            </withPropsOnChange(TextLinkProps)>
-          </Localized>
+              <span>
+                View conversation
+              </span>
+            </Localized>
+          </ForwardRef(forwardRef)>
         </div>
         <div
           className="ModerateCard-separator ModerateCard-ruledSeparator"
@@ -149,14 +150,10 @@ exports[`renders correctly 1`] = `
           alignItems="center"
         >
           <React.Fragment>
-            <ForwardRef(forwardRef)
-              className="ModerateCard-usernameButton"
+            <UsernameButton
               onClick={[Function]}
-            >
-              <Username>
-                Theon
-              </Username>
-            </ForwardRef(forwardRef)>
+              username="Theon"
+            />
             <Relay(CommentAuthorContainer)
               comment={Object {}}
             />
@@ -194,17 +191,22 @@ exports[`renders correctly 1`] = `
         <div
           className="ModerateCard-viewContext"
         >
-          <Localized
-            id="moderate-comment-viewContext"
+          <ForwardRef(forwardRef)
+            iconLeft={true}
+            onClick={[Function]}
+            variant="text"
           >
-            <withPropsOnChange(TextLinkProps)
-              className="ModerateCard-link"
-              href="http://localhost/comment"
-              target="_blank"
+            <ForwardRef(forwardRef)>
+              question_answer
+            </ForwardRef(forwardRef)>
+            <Localized
+              id="moderate-comment-viewConversation"
             >
-              View Context
-            </withPropsOnChange(TextLinkProps)>
-          </Localized>
+              <span>
+                View conversation
+              </span>
+            </Localized>
+          </ForwardRef(forwardRef)>
         </div>
         <div
           className="ModerateCard-separator ModerateCard-ruledSeparator"
@@ -279,14 +281,10 @@ exports[`renders dangling correctly 1`] = `
           alignItems="center"
         >
           <React.Fragment>
-            <ForwardRef(forwardRef)
-              className="ModerateCard-usernameButton"
+            <UsernameButton
               onClick={[Function]}
-            >
-              <Username>
-                Theon
-              </Username>
-            </ForwardRef(forwardRef)>
+              username="Theon"
+            />
             <Relay(CommentAuthorContainer)
               comment={Object {}}
             />
@@ -324,17 +322,22 @@ exports[`renders dangling correctly 1`] = `
         <div
           className="ModerateCard-viewContext"
         >
-          <Localized
-            id="moderate-comment-viewContext"
+          <ForwardRef(forwardRef)
+            iconLeft={true}
+            onClick={[Function]}
+            variant="text"
           >
-            <withPropsOnChange(TextLinkProps)
-              className="ModerateCard-link"
-              href="http://localhost/comment"
-              target="_blank"
+            <ForwardRef(forwardRef)>
+              question_answer
+            </ForwardRef(forwardRef)>
+            <Localized
+              id="moderate-comment-viewConversation"
             >
-              View Context
-            </withPropsOnChange(TextLinkProps)>
-          </Localized>
+              <span>
+                View conversation
+              </span>
+            </Localized>
+          </ForwardRef(forwardRef)>
         </div>
         <div
           className="ModerateCard-separator ModerateCard-ruledSeparator"
@@ -409,14 +412,10 @@ exports[`renders rejected correctly 1`] = `
           alignItems="center"
         >
           <React.Fragment>
-            <ForwardRef(forwardRef)
-              className="ModerateCard-usernameButton"
+            <UsernameButton
               onClick={[Function]}
-            >
-              <Username>
-                Theon
-              </Username>
-            </ForwardRef(forwardRef)>
+              username="Theon"
+            />
             <Relay(CommentAuthorContainer)
               comment={Object {}}
             />
@@ -454,17 +453,22 @@ exports[`renders rejected correctly 1`] = `
         <div
           className="ModerateCard-viewContext"
         >
-          <Localized
-            id="moderate-comment-viewContext"
+          <ForwardRef(forwardRef)
+            iconLeft={true}
+            onClick={[Function]}
+            variant="text"
           >
-            <withPropsOnChange(TextLinkProps)
-              className="ModerateCard-link"
-              href="http://localhost/comment"
-              target="_blank"
+            <ForwardRef(forwardRef)>
+              question_answer
+            </ForwardRef(forwardRef)>
+            <Localized
+              id="moderate-comment-viewConversation"
             >
-              View Context
-            </withPropsOnChange(TextLinkProps)>
-          </Localized>
+              <span>
+                View conversation
+              </span>
+            </Localized>
+          </ForwardRef(forwardRef)>
         </div>
         <div
           className="ModerateCard-separator ModerateCard-ruledSeparator"
@@ -539,14 +543,10 @@ exports[`renders reply correctly 1`] = `
           alignItems="center"
         >
           <React.Fragment>
-            <ForwardRef(forwardRef)
-              className="ModerateCard-usernameButton"
+            <UsernameButton
               onClick={[Function]}
-            >
-              <Username>
-                Theon
-              </Username>
-            </ForwardRef(forwardRef)>
+              username="Theon"
+            />
             <Relay(CommentAuthorContainer)
               comment={Object {}}
             />
@@ -593,17 +593,22 @@ exports[`renders reply correctly 1`] = `
         <div
           className="ModerateCard-viewContext"
         >
-          <Localized
-            id="moderate-comment-viewContext"
+          <ForwardRef(forwardRef)
+            iconLeft={true}
+            onClick={[Function]}
+            variant="text"
           >
-            <withPropsOnChange(TextLinkProps)
-              className="ModerateCard-link"
-              href="http://localhost/comment"
-              target="_blank"
+            <ForwardRef(forwardRef)>
+              question_answer
+            </ForwardRef(forwardRef)>
+            <Localized
+              id="moderate-comment-viewConversation"
             >
-              View Context
-            </withPropsOnChange(TextLinkProps)>
-          </Localized>
+              <span>
+                View conversation
+              </span>
+            </Localized>
+          </ForwardRef(forwardRef)>
         </div>
         <div
           className="ModerateCard-separator ModerateCard-ruledSeparator"
@@ -678,14 +683,10 @@ exports[`renders story info 1`] = `
           alignItems="center"
         >
           <React.Fragment>
-            <ForwardRef(forwardRef)
-              className="ModerateCard-usernameButton"
+            <UsernameButton
               onClick={[Function]}
-            >
-              <Username>
-                Theon
-              </Username>
-            </ForwardRef(forwardRef)>
+              username="Theon"
+            />
             <Relay(CommentAuthorContainer)
               comment={Object {}}
             />
@@ -723,17 +724,22 @@ exports[`renders story info 1`] = `
         <div
           className="ModerateCard-viewContext"
         >
-          <Localized
-            id="moderate-comment-viewContext"
+          <ForwardRef(forwardRef)
+            iconLeft={true}
+            onClick={[Function]}
+            variant="text"
           >
-            <withPropsOnChange(TextLinkProps)
-              className="ModerateCard-link"
-              href="http://localhost/comment"
-              target="_blank"
+            <ForwardRef(forwardRef)>
+              question_answer
+            </ForwardRef(forwardRef)>
+            <Localized
+              id="moderate-comment-viewConversation"
             >
-              View Context
-            </withPropsOnChange(TextLinkProps)>
-          </Localized>
+              <span>
+                View conversation
+              </span>
+            </Localized>
+          </ForwardRef(forwardRef)>
         </div>
         <div
           className="ModerateCard-separator ModerateCard-ruledSeparator"
@@ -846,14 +852,10 @@ exports[`renders tombstoned when comment is deleted 1`] = `
           alignItems="center"
         >
           <React.Fragment>
-            <ForwardRef(forwardRef)
-              className="ModerateCard-usernameButton"
+            <UsernameButton
               onClick={[Function]}
-            >
-              <Username>
-                Theon
-              </Username>
-            </ForwardRef(forwardRef)>
+              username="Theon"
+            />
             <Relay(CommentAuthorContainer)
               comment={Object {}}
             />
@@ -899,17 +901,22 @@ exports[`renders tombstoned when comment is deleted 1`] = `
         <div
           className="ModerateCard-viewContext"
         >
-          <Localized
-            id="moderate-comment-viewContext"
+          <ForwardRef(forwardRef)
+            iconLeft={true}
+            onClick={[Function]}
+            variant="text"
           >
-            <withPropsOnChange(TextLinkProps)
-              className="ModerateCard-link"
-              href="http://localhost/comment"
-              target="_blank"
+            <ForwardRef(forwardRef)>
+              question_answer
+            </ForwardRef(forwardRef)>
+            <Localized
+              id="moderate-comment-viewConversation"
             >
-              View Context
-            </withPropsOnChange(TextLinkProps)>
-          </Localized>
+              <span>
+                View conversation
+              </span>
+            </Localized>
+          </ForwardRef(forwardRef)>
         </div>
         <div
           className="ModerateCard-separator ModerateCard-ruledSeparator"
