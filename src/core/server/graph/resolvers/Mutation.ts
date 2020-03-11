@@ -316,4 +316,10 @@ export const Mutation: Required<GQLMutationTypeResolver<void>> = {
     endpoint: await ctx.mutators.Settings.rotateWebhookEndpointSecret(input),
     clientMutationId,
   }),
+  testSMTP: async (source, { input: { clientMutationId } }, ctx) => {
+    await ctx.mutators.Settings.testSMTP();
+    return {
+      clientMutationId,
+    };
+  },
 };

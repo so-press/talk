@@ -13,6 +13,7 @@ import {
   rotateWebhookEndpointSecret,
   update,
   updateWebhookEndpoint,
+  sendSMTPTest,
 } from "coral-server/services/tenant";
 
 import {
@@ -36,6 +37,8 @@ export const Settings = ({
   tenant,
   config,
   now,
+  mailerQueue,
+  user,
 }: GraphContext) => ({
   update: (
     input: WithoutMutationID<GQLUpdateSettingsInput>
@@ -89,4 +92,5 @@ export const Settings = ({
       input.inactiveIn,
       now
     ),
+  testSMTP: () => sendSMTPTest(tenant, user!, mailerQueue),
 });

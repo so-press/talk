@@ -5973,6 +5973,14 @@ type UpdateStoryModePayload {
   clientMutationId: String!
 }
 
+input TestSMTPInput {
+  clientMutationId: String!
+}
+
+type TestSMTPPayload {
+  clientMutationId: String!
+}
+
 ##################
 ## Mutation
 ##################
@@ -6415,16 +6423,17 @@ type Mutation {
   """
   addStoryExpert adds an expert to a story.
   """
-  addStoryExpert(
-    input: AddExpertInput!
-  ): AddExpertPayload! @auth(roles: [ADMIN, MODERATOR])
+  addStoryExpert(input: AddExpertInput!): AddExpertPayload!
+    @auth(roles: [ADMIN, MODERATOR])
 
   """
   removeStoryExpert removes an expert from a story.
   """
-  removeStoryExpert(
-    input: RemoveExpertInput!
-  ): RemoveExpertPayload! @auth(roles: [ADMIN, MODERATOR])
+  removeStoryExpert(input: RemoveExpertInput!): RemoveExpertPayload!
+    @auth(roles: [ADMIN, MODERATOR])
+
+  testSMTP(input: TestSMTPInput!): TestSMTPPayload!
+    @auth(roles: [ADMIN, MODERATOR])
 }
 
 ##################
