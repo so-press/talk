@@ -7,7 +7,6 @@ import { URL } from "url";
 import { discover } from "coral-server/app/middleware/passport/strategies/oidc/discover";
 import { Config } from "coral-server/config";
 import { TenantInstalledAlreadyError } from "coral-server/errors";
-import { MailerQueue } from "coral-server/queue/tasks/mailer";
 import logger from "coral-server/logger";
 import {
   CreateAnnouncementInput,
@@ -30,6 +29,7 @@ import {
   UpdateTenantWebhookEndpointInput,
 } from "coral-server/models/tenant";
 import { User } from "coral-server/models/user";
+import { MailerQueue } from "coral-server/queue/tasks/mailer";
 import { I18n } from "coral-server/services/i18n";
 
 import {
@@ -556,7 +556,7 @@ export async function sendSMTPTest(
 ) {
   if (user.email) {
     if (!tenant.email.enabled) {
-      throw new Error("Must enable email");
+      throw new Error("Email not enabled");
     }
     await mailer.add({
       tenantID: tenant.id,
