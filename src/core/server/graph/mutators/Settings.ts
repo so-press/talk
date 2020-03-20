@@ -3,17 +3,17 @@ import { Tenant } from "coral-server/models/tenant";
 import {
   createAnnouncement,
   createWebhookEndpoint,
-  deactivateSSOKey,
+  deactivateSSOSigningSecret,
   deleteAnnouncement,
-  deleteSSOKey,
+  deleteSSOSigningSecret,
   deleteWebhookEndpoint,
   disableFeatureFlag,
   disableWebhookEndpoint,
   enableFeatureFlag,
   enableWebhookEndpoint,
   regenerateSSOKey,
-  rotateSSOKey,
-  rotateWebhookEndpointSecret,
+  rotateSSOSigningSecret,
+  rotateWebhookEndpointSigningSecret,
   update,
   updateWebhookEndpoint,
 } from "coral-server/services/tenant";
@@ -21,14 +21,14 @@ import {
 import {
   GQLCreateAnnouncementInput,
   GQLCreateWebhookEndpointInput,
-  GQLDeactivateSSOKeyInput,
-  GQLDeleteSSOKeyInput,
+  GQLDeactivateSSOSigningSecretInput,
+  GQLDeleteSSOSigningSecretInput,
   GQLDeleteWebhookEndpointInput,
   GQLDisableWebhookEndpointInput,
   GQLEnableWebhookEndpointInput,
   GQLFEATURE_FLAG,
-  GQLRotateSSOKeyInput,
-  GQLRotateWebhookEndpointSecretInput,
+  GQLRotateSSOSigningSecretInput,
+  GQLRotateWebhookEndpointSigningSecretInput,
   GQLUpdateSettingsInput,
   GQLUpdateWebhookEndpointInput,
 } from "coral-server/graph/schema/__generated__/types";
@@ -49,12 +49,12 @@ export const Settings = ({
     update(mongo, redis, tenantCache, config, tenant, input.settings),
   regenerateSSOKey: (): Promise<Tenant | null> =>
     regenerateSSOKey(mongo, redis, tenantCache, tenant, now),
-  rotateSSOKey: ({ inactiveIn }: GQLRotateSSOKeyInput) =>
-    rotateSSOKey(mongo, redis, tenantCache, tenant, inactiveIn, now),
-  deleteSSOKey: ({ kid }: GQLDeleteSSOKeyInput) =>
-    deleteSSOKey(mongo, redis, tenantCache, tenant, kid),
-  deactivateSSOKey: ({ kid }: GQLDeactivateSSOKeyInput) =>
-    deactivateSSOKey(mongo, redis, tenantCache, tenant, kid, now),
+  rotateSSOSigningSecret: ({ inactiveIn }: GQLRotateSSOSigningSecretInput) =>
+    rotateSSOSigningSecret(mongo, redis, tenantCache, tenant, inactiveIn, now),
+  deleteSSOSigningSecret: ({ kid }: GQLDeleteSSOSigningSecretInput) =>
+    deleteSSOSigningSecret(mongo, redis, tenantCache, tenant, kid),
+  deactivateSSOSigningSecret: ({ kid }: GQLDeactivateSSOSigningSecretInput) =>
+    deactivateSSOSigningSecret(mongo, redis, tenantCache, tenant, kid, now),
   enableFeatureFlag: (flag: GQLFEATURE_FLAG) =>
     enableFeatureFlag(mongo, redis, tenantCache, tenant, flag),
   disableFeatureFlag: (flag: GQLFEATURE_FLAG) =>
@@ -89,10 +89,10 @@ export const Settings = ({
   deleteWebhookEndpoint: (
     input: WithoutMutationID<GQLDeleteWebhookEndpointInput>
   ) => deleteWebhookEndpoint(mongo, redis, tenantCache, tenant, input.id),
-  rotateWebhookEndpointSecret: (
-    input: WithoutMutationID<GQLRotateWebhookEndpointSecretInput>
+  rotateWebhookEndpointSigningSecret: (
+    input: WithoutMutationID<GQLRotateWebhookEndpointSigningSecretInput>
   ) =>
-    rotateWebhookEndpointSecret(
+    rotateWebhookEndpointSigningSecret(
       mongo,
       redis,
       tenantCache,

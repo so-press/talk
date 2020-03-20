@@ -70,7 +70,7 @@ const SSOKeyRotationContainer: FunctionComponent<Props> = ({
   const {
     auth: {
       integrations: {
-        sso: { keys },
+        sso: { signingSecrets },
       },
     },
   } = settings;
@@ -81,7 +81,7 @@ const SSOKeyRotationContainer: FunctionComponent<Props> = ({
         <Label htmlFor="configure-auth-sso-rotate-keys">Keys</Label>
       </Localized>
       {sortByDate(
-        keys.map(k => {
+        signingSecrets.map(k => {
           return {
             kid: k.kid,
             secret: k.secret,
@@ -114,7 +114,7 @@ const enhanced = withFragmentContainer<Props>({
         integrations {
           sso {
             enabled
-            keys {
+            signingSecrets {
               kid
               secret
               createdAt
